@@ -27,7 +27,7 @@
             bindings = <&kp>, <&kp>;
             hold-trigger-key-positions = <L D W V Z H T S N Q R M F P N6 N7 N8 N9 N0>;
             hold-trigger-on-release;
-        }
+        };
 
         hrmr: hrmr {
             compatible = "zmk,behavior-hold-tap";
@@ -38,7 +38,7 @@
             bindings = <&kp>, <&kp>;
             hold-trigger-key-positions = <B Y O U C I E A G X J L N1 N2 N3 N4 N5>;
             hold-trigger-on-release;
-        }
+        };
 
         // For the "layer" key, it'd nice to be able to use it as either a shift or a toggle.
         // Configure it as a tap dance, so the first tap (or hold) is a &mo and the second tap is a &to
