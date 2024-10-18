@@ -15,6 +15,8 @@
 #define DEFAULT 0
 #define LOWER 1
 #define MAGIC 2
+#define SYM 3
+#define NUM 4
 
 / {
     behaviors {
@@ -89,12 +91,12 @@
 
         default_layer {
             bindings = <
-            &kp F1         &kp F2   &kp F3      &kp F4      &kp F5                                                                                            &kp F6  &kp F7      &kp F8      &kp F9      &kp F10
-            &kp EQUAL      &kp N1   &kp N2      &kp N3      &kp N4    &kp N5                                                                        &kp N6    &kp N7  &kp N8      &kp N9      &kp N0      &kp BSLH
-            &kp ESC        &kp B    &kp Y       &kp O       &kp U     &kp SQT                                                                       &kp SEMI  &kp L   &kp D       &kp W       &kp V       &kp Z
-            &kp TAB        &hrml LCTRL C &hrml LSHIFT I &hrml LALT E  &hrml LGUI A     &kp COMMA                                                            &kp DOT   &hrml LGUI H   &hrml LALT T       &hrml RSHIFT S       &hrml LCTRL N       &kp Q
-            &kp GRAVE      &kp G    &kp X       &kp J       &kp K     &kp MINUS  &kp LSHFT   &kp LCTRL   &layer_td  &kp LGUI  &kp RCTRL &kp RSHFT   &kp SLASH &kp R   &kp M       &kp F       &kp P       &kp PG_UP
-            &mo MAGIC      &kp HOME &kp END     &kp LEFT    &kp RIGHT            &kp BSPC    &kp DEL     &kp LALT   &kp RALT  &kp RET   &kp SPACE             &kp UP  &kp DOWN    &kp LBKT    &kp RBKT    &kp PG_DN
+            &kp F1      &kp F2        &kp F3         &kp F4        &kp F5                                                                                                 &kp F6  &kp F7      &kp F8      &kp F9      &kp F10
+            &kp EQUAL   &kp N1        &kp N2         &kp N3        &kp N4       &kp N5                                                                          &kp N6    &kp N7  &kp N8      &kp N9      &kp N0      &kp BSLH
+            &kp ESC     &kp B         &kp Y          &kp O         &kp U        &kp SQT                                                                         &kp SEMI  &kp L   &kp D       &kp W       &kp V       &kp Z
+            &kp TAB     &hrml LCTRL C &hrml LSHIFT I &hrml LALT E  &hrml LGUI A &kp COMMA                                                                       &kp DOT   &hrml LGUI H   &hrml LALT T       &hrml RSHIFT S       &hrml LCTRL N       &kp Q
+            &kp GRAVE   &kp G         &kp X          &kp J         &kp K        &kp MINUS  &kp LSHFT   &kp &mo SYM &layer_td    &kp LGUI  &mo SYM   &kp RSHFT   &kp SLASH &kp R   &kp M       &kp F       &kp P       &kp PG_UP
+            &mo MAGIC   &kp HOME      &kp END        &kp LEFT      &kp RIGHT               &kp BSPC    &kp DEL     &mo NUM      &kp RALT  &kp RET   &kp SPACE             &kp UP  &kp DOWN    &kp LBKT    &kp RBKT    &kp PG_DN
             >;
         };
 
@@ -117,6 +119,28 @@
             &bootloader       &rgb_ug RGB_SPD     &rgb_ug RGB_SAD &rgb_ug RGB_HUD &rgb_ug RGB_BRD &rgb_ug RGB_EFF                                                                      &none      &none      &none      &none      &none      &bootloader
             &sys_reset        &none               &none           &none           &none           &none           &bt_2     &bt_3     &none            &none     &none     &none       &none      &none      &none      &none      &none      &sys_reset
             &none             &none               &none           &none           &none                           &bt_0     &bt_1     &out OUT_USB     &none     &none     &none                  &none      &none      &none      &none      &none
+            >;
+        };
+
+        symbols_layer {
+            bindings = <
+            &none             &none               &none           &none           &none                                                                                                     &none      &none      &none      &none      &none
+            &none             &none               &none           &none           &kp           &none                                                                            &none      &none      &none      &none      &none      &none
+            &none             &none               &none           &none           &kp LBKT      &none                                                                            &none      &kp RBKT   &none      &none      &none      &none
+            &none             &none               &none           &none           &kp LPAR      &kp EQUAL                                                                        &none      &kp RPAR   &none      &none      &none      &none
+            &none             &none               &none           &none           &kp LBRC      &none         &none     &none     &none            &none     &none     &none     &none      &kp RBRC   &none      &none      &none      &none
+            &none             &none               &none           &none           &none                       &none     &none     &none            &none     &none     &none                &none      &none      &none      &none      &none
+            >;
+        };
+
+        numeric_layer {
+            bindings = <
+            &none             &none               &none           &none           &none                                                                                                           &none      &none      &none      &none      &none
+            &none             &none               &none           &none           &none           &none                                                                                &none      &kp N7     &kp N8     &kp N9     &none      &none
+            &none             &none               &none           &none           &none           &none                                                                                &none      &kp N4     &kp N5     &kp N6     &none      &none
+            &none             &none               &none           &none           &none           &none                                                                                &kp N0     &kp N1     &kp N2     &kp N3     &none      &none
+            &none             &none               &none           &none           &none           &none           &none     &none     &none            &none     &none     &none       &none      &none      &none      &none      &none      &none
+            &none             &none               &none           &none           &none                           &none     &none     &none            &none     &none     &none                  &none      &none      &none      &none      &none
             >;
         };
     };
