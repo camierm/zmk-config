@@ -121,10 +121,10 @@
         symbols_layer {
             bindings = <
             &none             &none               &none           &none           &none                                                                                                     &none      &none      &none      &none      &none
-            &none             &none               &none           &none           &kp           &none                                                                            &none      &none      &none      &none      &none      &none
-            &none             &none               &none           &none           &kp LBKT      &none                                                                            &none      &kp RBKT   &none      &none      &none      &none
-            &none             &none               &none           &none           &kp LPAR      &kp EQUAL                                                                        &none      &kp RPAR   &none      &none      &none      &none
-            &none             &none               &none           &none           &kp LBRC      &none         &none     &none     &none            &none     &none     &none     &none      &kp RBRC   &none      &none      &none      &none
+            &none             &none               &none           &none           &none      &none                                                                            &none      &none      &none      &none      &none      &none
+            &none             &none               &none           &none           &none      &kp LBKT                                                                         &kp RIGHT_BRACKET      &none   &none      &none      &none      &none
+            &none             &none               &none           &none           &none      &kp LPAR                                                                         &kp RIGHT_PARENTHESIS      &none   &none      &none      &none      &none
+            &none             &none               &none           &none           &none      &kp LBRC         &none     &none     &none            &none     &none     &none  &kp RIGHT_BRACE   &none      &none      &none      &none &none
             &none             &none               &none           &none           &none                       &none     &none     &none            &none     &none     &none                &none      &none      &none      &none      &none
             >;
         };
